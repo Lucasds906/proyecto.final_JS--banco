@@ -1,0 +1,59 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+  list-style: none;
+  text-decoration: none; }
+
+nav {
+  width: 100%;
+  height: 8rem;
+  background-color: #2C2A59; }
+  nav .headerLogo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem; }
+    nav .headerLogo a img {
+      width: 6rem; }
+    nav .headerLogo .brandName {
+      color: white;
+      font-size: 4rem; }
+
+main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 80vh;
+  background-image: url(../assets/img/banking.png);
+  background-repeat: no-repeat;
+  background-size: 125rem;
+  background-position: 50%; }
+  main div {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 50%;
+    height: 100%;
+    padding: 1.5rem;
+    color: white; }
+    main div h1 {
+      font-size: 4rem; }
+    main div h2 {
+      font-size: 2rem; }
+    main div button {
+      width: auto;
+      height: 3.125rem;
+      font-size: 1rem;
+      padding: .5rem; }
+  main form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    margin: auto; }
