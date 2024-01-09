@@ -22,7 +22,7 @@ nav {
       color: white;
       font-size: 4rem; }
 
-main {
+.mainIndex {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -31,7 +31,7 @@ main {
   background-repeat: no-repeat;
   background-size: 125rem;
   background-position: 50%; }
-  main div {
+  .mainIndex div {
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -41,19 +41,32 @@ main {
     height: 100%;
     padding: 1.5rem;
     color: white; }
-    main div h1 {
+    .mainIndex div h1 {
       font-size: 4rem; }
-    main div h2 {
+    .mainIndex div h2 {
       font-size: 2rem; }
-    main div button {
+    .mainIndex div button {
       width: auto;
       height: 3.125rem;
       font-size: 1rem;
       padding: .5rem; }
-  main form {
+  .mainIndex form {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: .5rem;
     margin: auto; }
+
+.mainHome {
+  height: 80vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center; }
+
+.productosDeCanje {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: .5rem; }
