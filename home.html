@@ -19,48 +19,56 @@
     </header>
 
     <main class="mainHome">
-        <article class="card">
-            <div>
-                <img src="./assets/img/banking (1) (1).png" alt="foto random">
-            </div>
-            <h2>Consultar saldo</h2>
-            <button><a href="./productos.html">Ingresar</a></button>
-        </article>
-        <article class="card">
-            <div>
-                <img src="./assets/img/banking (1) (1).png" alt="foto random">
-            </div>
-            <h2>Realizar un depósito</h2>
-            <button><a href="./productos.html">Ingresar</a></button>
-        </article>
-        <article class="card">
-            <div>
-                <img src="./assets/img/banking (1) (1).png" alt="foto random">
-            </div>
-            <h2>Transferir dinero</h2>
-            <button><a href="./productos.html">Ingresar</a></button>
-        </article>
-        <article class="card">
-            <div>
-                <img src="./assets/img/banking (1) (1).png" alt="foto random">
-            </div>
-            <h2>Productos para canjear</h2>
-            <button><a href="./productos.html">Ingresar</a></button>
-        </article>
-        <article class="card">
-            <div>
-                <img src="./assets/img/banking (1) (1).png" alt="foto random">
-            </div>
-            <h2>Canjear puntos</h2>
-            <button><a href="./productos.html">Ingresar</a></button>
-        </article>
+        <div class="saldo">
+            <h1>El saldo de tu ceunta es:</h1>
+        </div>
+        <section class="cardContainer">
+            <article class="card">
+                <div>
+                    <img src="./assets/img/banking (1) (1).png" alt="foto random">
+                </div>
+                <h2>Realizar un depósito</h2>
+                <button id="botonDeposito">Ingresar</button>
+                <div id="form-deposito" class="formDeposito">                
+                    <label for="deposito">Ingrese el monto a depositar</label>
+                    <input type="number" id="deposito">
+                    <button>Depositar</button>
+                </div>
+            </article>
+            <article class="card">
+                <div>
+                    <img src="./assets/img/banking (1) (1).png" alt="foto random">
+                </div>
+                <h2>Transferir dinero</h2>
+                <button id="botonTransfer">Ingresar</button>
+                <div id="form-transfer" class="formTransferencia">                
+                    <label for="transferencia">Ingrese el monto a depositar</label>
+                    <input type="number" id="transferencia">
+                    <button>Depositar</button>
+                </div>
+            </article>
+            <article class="card">
+                <div>
+                    <img src="./assets/img/banking (1) (1).png" alt="foto random">
+                </div>
+                <h2>Productos para canjear</h2>
+                <button><a href="./productos.html">Ingresar</a></button>
+            </article>
+            <article class="card">
+                <div>
+                    <img src="./assets/img/banking (1) (1).png" alt="foto random">
+                </div>
+                <h2>Canjear puntos</h2>
+                <button><a href="canjes.html">Ingresar</a></button>
+            </article>
+        </section>
     </main>
 
     <footer>
 
     </footer>
 
-    <script src="main.js"></script>
+    <script src="./js/main.js"></script>
     <!-- <script src="productos.js"></script> -->
 </body>
 

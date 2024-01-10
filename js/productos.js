@@ -1,12 +1,8 @@
-
-
-
-
-
 let saldo = 0
 let puntos = 0
 let productosDeCanje = []
 let posiblesCanjes = []
+
 
 class CELULAR {
     constructor(marca, modelo, espacio, ram, precio, puntos, categoria) {
@@ -20,11 +16,10 @@ class CELULAR {
         this.info = `${marca}, ${modelo}, ${espacio}, ${ram}, ${precio}, ${puntos} puntos.`
     }
 }
-
 productosDeCanje.push(
     new CELULAR('Samnsung', 'S10', '128g', '6g', '$150.000', 3000, 'celulares'),
     new CELULAR('Xiamoi', 'Redmi 11', '128', '8g', '$100.000', 2000, 'celulares'),
-    new CELULAR('Iphone', '14', '256g', '8g', '$500.000', 10000, 'celulares')
+    new CELULAR('Iphone', '14', '256g', '8g', '$500.000', 10000, 'celulares'),
 )
 
 class COCINA {
@@ -96,19 +91,23 @@ productosDeCanje.push(
     new TECNOLOGIA('Webcam', 'Philips', 'Negro', '$50.000', 1000, 'tecnologia'),
 )
 
+sessionStorage.setItem('miArray', JSON.stringify(posiblesCanjes));
+console.log(sessionStorage)
+
 let containerCards = document.querySelector('.productosDeCanje')
 
-productosDeCanje.forEach((producto)=> {
+productosDeCanje.forEach((producto) => {
     containerCards.innerHTML += `
-    <article class="card">
-            <div>
-                <img src="./assets/img/banking (1) (1).png" alt="foto random">
+        <article class="card">
+        <div>
+        <img src="./assets/img/banking (1) (1).png" alt="foto random">
             </div>
             <h2>${producto.categoria}</h2>
             <button><a href="./productos.html">${producto.puntos}</a></button>
-        </article>
-    `
+            </article>
+            `
 })
+
 
 
 // seleccionarOpcion()

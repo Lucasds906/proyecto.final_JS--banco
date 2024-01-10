@@ -1,7 +1,22 @@
 .mainHome {
     height: 80vh;
+    .cardContainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .saldo {
+        margin: 3rem;
+        text-align: center;
+    }
+}
+
+.formDeposito, .formTransferencia {
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
+    flex-direction: column;
+}
+
+.visible {
+    display: none;
 }
