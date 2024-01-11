@@ -6,13 +6,13 @@
         justify-content: space-evenly;
         align-items: center;
     }
-    .saldo {
+    .saldoContainer {
         margin: 3rem;
         text-align: center;
     }
 }
 
-.formDeposito, .formTransferencia {
+.formDeposito, .formExtraccion {
     display: flex;
     flex-direction: column;
 }

@@ -1,7 +1,7 @@
-let saldo = 0
-let puntos = 0
+
+
 let productosDeCanje = []
-let posiblesCanjes = []
+// let posiblesCanjes = []
 
 
 class CELULAR {
@@ -91,22 +91,38 @@ productosDeCanje.push(
     new TECNOLOGIA('Webcam', 'Philips', 'Negro', '$50.000', 1000, 'tecnologia'),
 )
 
-sessionStorage.setItem('miArray', JSON.stringify(posiblesCanjes));
+
+
+
+// sessionStorage.setItem('miArray', JSON.stringify(posiblesCanjes));
+localStorage.setItem('miArrayCanjes', JSON.stringify(productosDeCanje));
 console.log(sessionStorage)
+console.log(localStorage)
 
 let containerCards = document.querySelector('.productosDeCanje')
 
 productosDeCanje.forEach((producto) => {
+
     containerCards.innerHTML += `
         <article class="card">
-        <div>
-        <img src="./assets/img/banking (1) (1).png" alt="foto random">
+            <div>
+                <img src="./assets/img/banking (1) (1).png" alt="foto random">
             </div>
             <h2>${producto.categoria}</h2>
-            <button><a href="./productos.html">${producto.puntos}</a></button>
-            </article>
-            `
+            <button><a href="./productos.html">${producto.puntos} Puntos</a></button>
+        </article>
+    `
 })
+
+
+
+
+
+
+
+
+
+
 
 
 
