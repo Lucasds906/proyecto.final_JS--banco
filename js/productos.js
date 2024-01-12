@@ -1,8 +1,4 @@
-
-
 let productosDeCanje = []
-// let posiblesCanjes = []
-
 
 class CELULAR {
     constructor(marca, modelo, espacio, ram, precio, puntos, categoria) {
@@ -91,10 +87,6 @@ productosDeCanje.push(
     new TECNOLOGIA('Webcam', 'Philips', 'Negro', '$50.000', 1000, 'tecnologia'),
 )
 
-
-
-
-// sessionStorage.setItem('miArray', JSON.stringify(posiblesCanjes));
 localStorage.setItem('miArrayCanjes', JSON.stringify(productosDeCanje));
 console.log(localStorage)
 
