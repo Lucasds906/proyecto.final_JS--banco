@@ -17,7 +17,6 @@
             </div>
         </nav>
     </header>
-
     <main class="mainHome">
         <div class="saldoContainer">
             <h1>Saldo: $</h1>
@@ -29,29 +28,28 @@
                 </div>
                 <h2>Realizar un depósito</h2>
                 <button id="botonDeposito">Ingresar</button>
+                <button id="botonHistorialDepo">Historial</button>
                 <form id="form-deposito" class="formDeposito">
                     <label for="deposito">Ingrese el monto a depositar</label>
                     <input type="number">
-                    <input type="submit" id="deposito">
+                    <input type="submit" id="deposito" value="Depositar">
                 </form>
+                <ul id="historialDepositos"></ul>
             </article>
-
-
             <article class="card">
                 <div>
                     <img src="./assets/img/banking (1) (1).png" alt="foto random">
                 </div>
                 <h2>Extraer dinero</h2>
                 <button id="botonExtraccion">Ingresar</button>
+                <button id="botonHistorialExtra">Historial</button>
                 <form id="form-extraccion" class="formExtraccion">
                     <label for="extraccion">Ingrese el monto a depositar</label>
                     <input type="number">
-                    <input type="submit" id="extraccion">
+                    <input type="submit" id="extraccion" value="Extraer">
                 </form>
+                <ul id="historialExtracciones"></ul>
             </article>
-
-
-
             <article class="card">
                 <div>
                     <img src="./assets/img/banking (1) (1).png" alt="foto random">
@@ -68,11 +66,6 @@
             </article>
         </section>
     </main>
-
-    <footer>
-
-    </footer>
-
     <script src="./js/main.js"></script>
     <script src="./js/productos.js"></script>
 </body>

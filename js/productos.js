@@ -13,7 +13,7 @@ class CELULAR {
         this.precio = precio
         this.puntos = puntos
         this.categoria = categoria
-        this.info = `${marca}, ${modelo}, ${espacio}, ${ram}, ${precio}, ${puntos} puntos.`
+        this.info = `${marca}, ${modelo}, ${puntos} puntos.`
     }
 }
 productosDeCanje.push(
@@ -30,7 +30,7 @@ class COCINA {
         this.precio = precio
         this.puntos = puntos
         this.categoria = categoria
-        this.info = `${producto}, ${material}, ${tamaño}, ${precio}, ${puntos} puntos.`
+        this.info = `${producto}, ${material}, ${puntos} puntos.`
     }
 }
 productosDeCanje.push(
@@ -47,7 +47,7 @@ class HOGAR {
         this.precio = precio
         this.puntos = puntos
         this.categoria = categoria
-        this.info = `${tipo}, ${color}, ${material}, ${precio}, ${puntos} puntos.`
+        this.info = `${tipo}, ${color}, ${puntos} puntos.`
     }
 }
 productosDeCanje.push(
@@ -65,7 +65,7 @@ class INDUMENTARIA {
         this.precio = precio
         this.puntos = puntos
         this.categoria = categoria
-        this.info = `${prenda}, ${genero}, ${color}, ${talle}, ${precio}, ${puntos} puntos.`
+        this.info = `${prenda}, ${genero}, ${puntos} puntos.`
     }
 }
 productosDeCanje.push(
@@ -82,7 +82,7 @@ class TECNOLOGIA {
         this.precio = precio
         this.puntos = puntos
         this.categoria = categoria
-        this.info = `${producto}, ${marca}, ${color}, ${precio}, ${puntos} puntos.`
+        this.info = `${producto}, ${marca}, ${puntos} puntos.`
     }
 }
 productosDeCanje.push(
@@ -96,23 +96,23 @@ productosDeCanje.push(
 
 // sessionStorage.setItem('miArray', JSON.stringify(posiblesCanjes));
 localStorage.setItem('miArrayCanjes', JSON.stringify(productosDeCanje));
-console.log(sessionStorage)
 console.log(localStorage)
 
 let containerCards = document.querySelector('.productosDeCanje')
 
-productosDeCanje.forEach((producto) => {
-
-    containerCards.innerHTML += `
+if (document.getElementById('mainProductos')) {
+    productosDeCanje.forEach((producto) => {
+        containerCards.innerHTML += `
         <article class="card">
-            <div>
-                <img src="./assets/img/banking (1) (1).png" alt="foto random">
-            </div>
-            <h2>${producto.categoria}</h2>
-            <button><a href="./productos.html">${producto.puntos} Puntos</a></button>
+        <div>
+        <img src="./assets/img/banking (1) (1).png" alt="foto random">
+        </div>
+        <h2>${producto.info}</h2>
+        <button><a href="./productos.html">${producto.puntos} Puntos</a></button>
         </article>
-    `
-})
+        `
+    })
+}
 
 
 
