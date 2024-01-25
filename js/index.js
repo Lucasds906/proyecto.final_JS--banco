@@ -69,30 +69,36 @@ document.querySelectorAll('button')[1].addEventListener('click', async () => {
         inputLabel: "Your email address",
         inputPlaceholder: "Enter your email address"
     });
-    let usuarioVerificado = userArray.find((usuario) => usuario.email == email)
-    
-    if (usuarioVerificado) {
-        localStorage.setItem('usuarioVerificado', JSON.stringify(usuarioVerificado))
-        let usuarioPass = JSON.parse(localStorage.getItem('usuarioVerificado'))
-        const { value: password } = await Swal.fire({
-            title: "Enter your password",
-            input: "password",
-            background: '#000',
-            inputPlaceholder: "Enter your password",
-            inputAttributes: {
-                maxlength: "10",
-                autocapitalize: "off",
-                autocorrect: "off"
+    let usuarioVerificado = false
+    if (userArray) {
+        usuarioVerificado = userArray.find((usuario) => usuario.email == email)
+        if (usuarioVerificado) {
+            localStorage.setItem('usuarioVerificado', JSON.stringify(usuarioVerificado))
+            let usuarioPass = JSON.parse(localStorage.getItem('usuarioVerificado'))
+            const { value: password } = await Swal.fire({
+                title: "Enter your password",
+                input: "password",
+                background: '#000',
+                inputPlaceholder: "Enter your password",
+                inputAttributes: {
+                    maxlength: "10",
+                    autocapitalize: "off",
+                    autocorrect: "off"
+                }
+            });
+            if (password == usuarioPass.contraseña) {
+                window.location.href = "./pages/home.html"
+            } else {
+                Swal.fire('incorrecto')
             }
-        });
-        if (password == usuarioPass.contraseña) {
-            window.location.href = "./pages/home.html"
         } else {
-            Swal.fire('incorrecto')
+            Swal.fire(`e-mail incorrecto`);
         }
     } else {
-        Swal.fire(`e-mail incorrecto`);
+        Swal.fire(`Primero debe crear una cuenta`);
     }
+    
+    
 })
 
 
