@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
-
-<body>
+<body id="home">
     <header>
         <nav>
             <div class="headerLogo">
-                <a href="#"><img src="./assets/img/bank-logo.png" alt="logo banco"></a>
+                <a href="#"><img src="../assets/img/bank-logo.png" alt="logo banco"></a>
                 <a href="#" class="brandName">Big Bank</a>
             </div>
         </nav>
@@ -23,12 +21,14 @@
         </div>
         <section class="cardContainer">
             <article class="card">
-                <div>
-                    <img src="./assets/img/banking (1) (1).png" alt="foto random">
+                <div class="cardImg">
+                    <img src="../assets/img/banking (1) (1).png" alt="foto random">
                 </div>
-                <h2>Realizar un depósito</h2>
-                <button id="botonDeposito">Ingresar</button>
-                <button id="botonHistorialDepo">Historial</button>
+                <div class="cardButtons">
+                    <h2>Realizar un depósito</h2>
+                    <button id="botonDeposito">Ingresar</button>
+                    <button id="botonHistorialDepo">Historial</button>
+                </div>
                 <form id="form-deposito" class="formDeposito">
                     <label for="deposito">Ingrese el monto a depositar</label>
                     <input type="number">
@@ -38,11 +38,13 @@
             </article>
             <article class="card">
                 <div>
-                    <img src="./assets/img/banking (1) (1).png" alt="foto random">
+                    <img src="../assets/img/banking (1) (1).png" alt="foto random">
                 </div>
-                <h2>Extraer dinero</h2>
-                <button id="botonExtraccion">Ingresar</button>
-                <button id="botonHistorialExtra">Historial</button>
+                <div class="cardButtons">
+                    <h2>Extraer dinero</h2>
+                    <button id="botonExtraccion">Ingresar</button>
+                    <button id="botonHistorialExtra">Historial</button>
+                </div>
                 <form id="form-extraccion" class="formExtraccion">
                     <label for="extraccion">Ingrese el monto a depositar</label>
                     <input type="number">
@@ -52,22 +54,25 @@
             </article>
             <article class="card">
                 <div>
-                    <img src="./assets/img/banking (1) (1).png" alt="foto random">
+                    <img src="../assets/img/banking (1) (1).png" alt="foto random">
                 </div>
-                <h2>Productos para canjear</h2>
-                <button><a href="./productos.html">Ingresar</a></button>
-            </article>
+                <div class="cardButtons">
+                    <h2>Productos para canjear</h2>
+                    <button><a href="../pages/productos.html">Ingresar</a></button>
+                </article>
+            </div>
             <article class="card">
                 <div>
-                    <img src="./assets/img/banking (1) (1).png" alt="foto random">
+                    <img src="../assets/img/banking (1) (1).png" alt="foto random">
                 </div>
-                <h2>Canjear puntos</h2>
-                <button><a href="canjes.html">Ingresar</a></button>
-            </article>
+                <div class="cardButtons">
+                    <h2>Canjear puntos</h2>
+                    <button><a href="../pages/canjes.html">Ingresar</a></button>
+                </article>
+            </div>
         </section>
     </main>
-    <script src="./js/main.js"></script>
-    <script src="./js/productos.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/productos.js"></script>
 </body>
-
 </html>

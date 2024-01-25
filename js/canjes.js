@@ -32,7 +32,7 @@ function actualizarProdcutos() {
             containerCanje.innerHTML += `
             <article class="card">
             <div>
-            <img src="./assets/img/banking (1) (1).png" alt="foto random">
+            <img src="../assets/img/banking (1) (1).png" alt="foto random">
                 </div>
                 <h2>${producto.info}</h2>
                 <input type="submit" class="canjearProducto">${producto.puntos}

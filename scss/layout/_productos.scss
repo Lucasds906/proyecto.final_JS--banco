@@ -1,4 +1,7 @@
-
+#mainProductos {
+    height: 100%;
+    background-image: linear-gradient(to bottom, #2c2a59, #373574, #424090, #4d4bac, #5956ca, #5b57d5, #5d59e1, #5f5aec, #5751e7, #4e48e3, #453fde, #3c36d9);
+}
 
 .productosDeCanje {
     width: 62.5rem;
@@ -6,6 +9,6 @@
     flex-direction: row;
     flex-wrap: wrap;
     gap: .5rem;
-    margin: .5rem;
+    padding: .5rem;
     font-size: .7rem;
 }

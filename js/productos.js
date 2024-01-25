@@ -97,10 +97,10 @@ if (document.getElementById('mainProductos')) {
         containerCards.innerHTML += `
         <article class="card">
         <div>
-        <img src="./assets/img/banking (1) (1).png" alt="foto random">
+        <img src="../assets/img/banking (1) (1).png" alt="foto random">
         </div>
         <h2>${producto.info}</h2>
-        <button><a href="./productos.html">${producto.puntos} Puntos</a></button>
+        <button><a href="../pages/productos.html">${producto.puntos} Puntos</a></button>
         </article>
         `
     })
