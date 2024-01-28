@@ -1,4 +1,4 @@
-
+let contador = 0
 let saldo = 0
 // Creamos la variable 'puntos' que almacenará un porcentaje de los depósitos del usuario
 let puntos = 0
@@ -63,7 +63,7 @@ submitDeposito.addEventListener('click', (evt) => {
         inputDeposito.value = ''
         // Y creamos un objeto con el monto del depósito junto con la fecha y hora para almacenar en el historial
         // Lo pusheamos al array del hisotrial y cargamos el arrray en el storage
-        const nuevoDeposito = { monto: montoDeposito, fecha: new Date().toLocaleString() }
+        const nuevoDeposito = { monto: montoDeposito, fecha: new Date().toLocaleDateString() }
         historialActividad.push(nuevoDeposito)
         localStorage.setItem('historial', JSON.stringify(historialActividad))
     }
@@ -76,7 +76,7 @@ submitExtraccion.addEventListener('click', (evt)=> {
     if ((montoExtraccion <= 0) || (saldo < montoExtraccion)) {
         evt.preventDefault()
         Toastify({
-            text: "Ingrese un numero mayor que 0",
+            text: "El número ingresado debe ser mayor que 0, y menor que el saldo disponible.",
             duration: 3000,
             position: "left",
             }).showToast();
@@ -90,7 +90,7 @@ submitExtraccion.addEventListener('click', (evt)=> {
             }).showToast();
         inputExtraccion.value = ''
         // Acá el 'montoExtracción' lo guardamos en negativo para usarlo en la fn mostrarHisotrial
-        const nuevaExtraccion = { monto: -montoExtraccion, fecha: new Date().toLocaleString() }
+        const nuevaExtraccion = { monto: -montoExtraccion, fecha: new Date().toLocaleDateString() }
         historialActividad.push(nuevaExtraccion)
         localStorage.setItem('historial', JSON.stringify(historialActividad))
         formulario.submit()
@@ -144,14 +144,16 @@ function mostrarHistorial(operacion) {
         // Entonces hacemos un forEach de cada objeto guardado en el array y creamos un 'li' por cada uno
         const li = document.createElement('li')
         if (op.monto < 0) {
+            contador++
             // Y como guardamos el montoExtracción en negativo, acá podemos aplicar la condición para que si el monto es negativo,
             // el item de la lsita creado corresponda a una extracción
-            li.textContent = `Extracción de $${op.monto} realizada el ${op.fecha}`
+            li.innerText = `${contador}-Extracción: $${op.monto} realizada el ${op.fecha}`
             historialUl.appendChild(li)
             // y luego de hacer el append, le asignamos la clase 'extraccion' para darle color rojo a la letra
             li.classList.add('extraccion')
         } else if (op.monto > 0) {
-            li.textContent = `Depósito de $${op.monto} realizado el ${op.fecha}`
+            contador++
+            li.innerText = `${contador}-Depósito: $${op.monto} realizado el ${op.fecha}`
             historialUl.appendChild(li)
             li.classList.add('deposito')
         }

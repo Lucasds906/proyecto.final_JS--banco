@@ -54,7 +54,7 @@ function canjear() {
             // una alerta con el producto canjeado y que permite ir a ver los productos que se canjearon con éxito
             puntos -= posiblesCanjes[index].puntos
             Toastify({
-                text: `Has canjeado ${posiblesCanjes[index].info} con éxito!
+                text: `Has canjeado ${posiblesCanjes[index].producto} con éxito!
                 Haz click aquí para ver los productos canjeados
                 `,
                 destination: '../pages/canjeados.html',

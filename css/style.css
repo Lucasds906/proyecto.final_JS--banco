@@ -65,43 +65,48 @@ nav a {
   color: white; }
 
 .mainHome {
-  height: 100%;
+  height: 200vh;
   background-image: linear-gradient(to bottom, #2c2a59, #373574, #424090, #4d4bac, #5956ca, #5b57d5, #5d59e1, #5f5aec, #5751e7, #4e48e3, #453fde, #3c36d9);
   text-align: center; }
   .mainHome .cardContainer {
-    height: 30rem;
+    min-height: 30rem;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    flex-wrap: wrap; }
+    flex-wrap: wrap;
+    background-color: #cbbfbfbd; }
     .mainHome .cardContainer .card {
       border: solid black;
       border-radius: 10%;
       text-align: center;
       overflow: hidden; }
       .mainHome .cardContainer .card .cardButtons {
-        padding: .5rem; }
+        padding: 8px; }
   .mainHome .historial {
-    width: 50%;
-    background-color: black;
-    margin: auto; }
+    width: 40%;
+    background-color: #cbbfbfbd;
+    margin: auto;
+    text-align: left; }
     .mainHome .historial ul li {
-      font-size: 1.5rem; }
+      font-size: 24px; }
   .mainHome .saldoContainer {
-    min-width: 20rem;
-    margin: 4rem;
+    min-width: 320px;
+    margin: 64px;
     text-align: center;
     display: inline-block;
-    padding: .5rem;
+    background-color: #e2d5d544;
+    padding: 8px;
     border: solid black; }
   .mainHome #botonHistorial {
     display: inline-block;
-    padding: 2rem;
+    padding: 32px;
     cursor: pointer; }
+    .mainHome #botonHistorial:hover {
+      color: #cbbfbfbd; }
 
 .deposito {
-  color: white; }
+  color: #0b0b0bdc; }
 
 .extraccion {
   color: red; }
@@ -112,7 +117,7 @@ nav a {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: .5rem; }
+  margin: 8px; }
   .formDeposito input,
   .formExtraccion input {
     width: 50%; }
@@ -141,19 +146,24 @@ h1 {
   margin: auto;
   font-size: .7rem; }
 
-.misPuntos {
-  text-align: center;
-  margin: 3rem; }
-
-.posiblesCanjes {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: .5rem;
-  font-size: .7rem; }
-  .posiblesCanjes .card div img {
-    width: 20rem;
-    height: 16rem; }
+.mainCanjes {
+  text-align: center; }
+  .mainCanjes .misPuntos {
+    text-align: center;
+    margin: 3rem; }
+  .mainCanjes .posiblesCanjes {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: .5rem;
+    font-size: .7rem; }
+    .mainCanjes .posiblesCanjes .card div img {
+      width: 20rem;
+      height: 16rem; }
+  .mainCanjes a {
+    display: inline-block;
+    margin: 3rem; }
 
 .productosCanjeados {
   display: flex;
