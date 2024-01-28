@@ -1,217 +1,123 @@
+// Declaramos el array que va almacenar todos los productos
 let productosDeCanje = []
-
-class CELULAR {
-    constructor(marca, modelo, espacio, ram, precio, puntos, categoria) {
-        this.marca = marca
+// Creamos una clase con los datos en común y luego creamos extends con los datos particulares de cada categoría
+class Productos {
+    constructor(categoria, producto, puntos, imgURL) {
+        this.categoria = categoria
+        this.producto = producto
+        this.puntos = puntos
+        this.imgURL = imgURL
+        
+    }
+}
+class Celular extends Productos {
+    constructor(categoria, producto, puntos, imgURL, modelo, espacio, ram) {
+        super(categoria, producto, puntos, imgURL)
         this.modelo = modelo
         this.espacio = espacio
         this.ram = ram
-        this.precio = precio
-        this.puntos = puntos
-        this.categoria = categoria
-        this.info = `${marca}, ${modelo}, ${puntos} puntos.`
+        this.info = `Teléfono: ${producto}, ${modelo}. ${espacio}, ${ram}.`
     }
 }
-productosDeCanje.push(
-    new CELULAR('Samnsung', 'S10', '128g', '6g', '$150.000', 3000, 'celulares'),
-    new CELULAR('Xiamoi', 'Redmi 11', '128', '8g', '$100.000', 2000, 'celulares'),
-    new CELULAR('Iphone', '14', '256g', '8g', '$500.000', 10000, 'celulares'),
-)
-
-class COCINA {
-    constructor(producto, material, tamaño, precio, puntos, categoria) {
-        this.producto = producto
-        this.material = material
-        this.tamaño = tamaño
-        this.precio = precio
-        this.puntos = puntos
-        this.categoria = categoria
-        this.info = `${producto}, ${material}, ${puntos} puntos.`
-    }
-}
-productosDeCanje.push(
-    new COCINA('Olla', 'Acero inoxidable', '30cm de diámetro', '$15.000', 300, 'cocina'),
-    new COCINA('Sartén', 'Aluminio', '35 cm de diámetro', '$20.000', 400, 'cocina'),
-    new COCINA('Espátula', 'Madera', '40 cm', '$5.000', 100, 'cocina'),
-)
-
-class HOGAR {
-    constructor(tipo, color, material, precio, puntos, categoria) {
-        this.tipo = tipo
+class Indumentaria extends Productos {
+    constructor(categoria, producto, puntos, imgURL, color, talla, genero) {
+        super(categoria, producto, puntos, imgURL);
         this.color = color
-        this.material = material
-        this.precio = precio
-        this.puntos = puntos
-        this.categoria = categoria
-        this.info = `${tipo}, ${color}, ${puntos} puntos.`
-    }
-}
-productosDeCanje.push(
-    new HOGAR('Cortina', 'Negro', 'Lino', '$10.000', 200, 'hogar'),
-    new HOGAR('Almohadón', 'Beige', 'plumas', '$25.000', 500, 'hogar'),
-    new HOGAR('Silla', 'Blanco', 'Madera', '$18.000', 360, 'hogar'),
-)
-
-class INDUMENTARIA {
-    constructor(prenda, genero, color, talle, precio, puntos, categoria) {
-        this.prenda = prenda
+        this.talla = talla
         this.genero = genero
-        this.color = color
-        this.talle = talle
-        this.precio = precio
-        this.puntos = puntos
-        this.categoria = categoria
-        this.info = `${prenda}, ${genero}, ${puntos} puntos.`
+        this.info = `${producto} de ${genero}, ${color}. Talle: ${talla}`
     }
 }
-productosDeCanje.push(
-    new INDUMENTARIA('Remera', 'Hombre', 'Negro', '44', '$12.000', 240, 'indumentaria'),
-    new INDUMENTARIA('Pantalón', 'Mujer', 'Jean', '38', '$10.000', 200, 'indumentaria'),
-    new INDUMENTARIA('Buzo', 'Unisex', 'Azul', '40', '$19.000', 380, 'indumentaria')
-)
-
-class TECNOLOGIA {
-    constructor(producto, marca, color, precio, puntos, categoria) {
-        this.producto = producto
+class Cocina extends Productos {
+    constructor(categoria, producto, puntos, imgURL, material) {
+        super(categoria, producto, puntos, imgURL);
+        this.material = material
+        this.info = `${producto} de ${material}`
+    }
+}
+class Hogar extends Productos {
+    constructor(categoria, producto, puntos, imgURL, color, material,) {
+        super(categoria, producto, puntos, imgURL)
+        this.color = color;
+        this.material = material
+        this.info = `${producto} de ${material}, ${color}`
+    }
+}
+class Tecnologia extends Productos {
+    constructor(categoria, producto, puntos, imgURL, marca, color, bluethooth) {
+        super(categoria, producto, puntos, imgURL)
         this.marca = marca
-        this.color = color
-        this.precio = precio
-        this.puntos = puntos
-        this.categoria = categoria
-        this.info = `${producto}, ${marca}, ${puntos} puntos.`
+        this.color = color;
+        this.bluethooth = bluethooth
+        if (bluethooth) {
+            this.info = `${producto} ${marca}, ${color}, con bluethooth`
+        } else {
+            this.info = `${producto} ${marca}, ${color}, sin bluethooth`
+        }
     }
 }
 productosDeCanje.push(
-    new TECNOLOGIA('Auriculares', 'Samsung', 'Negro', '$24.000', 480, 'tecnologia'),
-    new TECNOLOGIA('Mouse gamer', 'Trust', 'Negro y rojo', '$30.000', 600, 'tecnologia'),
-    new TECNOLOGIA('Webcam', 'Philips', 'Negro', '$50.000', 1000, 'tecnologia'),
+    new Celular('Celular', 'Samsung', 3000, '../assets/img/s10.jpg', 'S10', 'Memoria: 128 gb', 'Ram: 6 g'),
+    new Celular('Celular', 'Xiaomi', 2000, '../assets/img/redmi11.jpg', 'Redmi 11', 'Memoria: 128 gb', 'Ram: 8 g'),
+    new Celular('Celular', 'Iphone', 10000, '../assets/img/iphone14.jpg', '14', 'Memoria: 246 gb', 'Ram: 10 g'),
 )
-
+productosDeCanje.push(
+    new Indumentaria('Indumentaria', 'Remera', 240, '../assets/img/remera-hombre.jpg', 'Negro', '44', 'Hombre'),
+    new Indumentaria('Indumentaria', 'Pantalón', 200, '../assets/img/jean-mujer.jpg', 'Jean', '38', 'Mujer'),
+    new Indumentaria('Indumentaria', 'Buzo', 380, '../assets/img/buzo-hombre.jpg', 'Azul', '40', 'Hombre')
+)
+productosDeCanje.push(
+    new Cocina('Cocina', 'Olla', 300, '../assets/img/olla-acero.jpg', 'Acero inoxidable'),
+    new Cocina('Cocina', 'Sartén', 400, '../assets/img/sarten.jpg', 'Aluminio'),
+    new Cocina('Cocina', 'Espátula', 100, '../assets/img/espatula.jpg', 'Madera'),
+)
+productosDeCanje.push(
+    new Hogar('Hogar', 'Cortina', 200, '../assets/img/cortina.jpg', 'Negro', 'Lino'),
+    new Hogar('Hogar', 'Almohadón', 500, '../assets/img/almohadon.jpg', 'Beige', 'Plumas'),
+    new Hogar('Hogar', 'Silla', 360, '../assets/img/silla.jpg', 'Blanco', 'Plástico y madera'),
+)
+productosDeCanje.push(
+    new Tecnologia('Tecnologia', 'Auriculares', 480, '../assets/img/auriculares.jpg', 'Samsung', 'Negro', true),
+    new Tecnologia('Tecnologia', 'Mouse gamer', 600, '../assets/img/mouse.jpg', 'Trust', 'Negro y rojo', true),
+    new Tecnologia('Tecnologia', 'Webcam', 1000, '../assets/img/webcam.jpg', 'Logitech', 'Negro', false),
+)
+// Guardamos el array en el storage para usarlo en otras páginas del sitio
 localStorage.setItem('miArrayCanjes', JSON.stringify(productosDeCanje));
-console.log(localStorage)
-
+// Luego seleccionamos el contenedor en el que se va a reenderizar cada producto según su categoría
 let containerCards = document.querySelector('.productosDeCanje')
-
+let containerIndu = document.querySelector('.indumentaria')
+let containerCocina = document.querySelector('.cocina')
+let containerHogar = document.querySelector('.hogar')
+let containerTecno = document.querySelector('.tecnologia')
+// Y usando un 'forEach' sobre el array usamos la fn 'renderProducto' que utiliza como parámetros la categoría y el contenedor de destino
 if (document.getElementById('mainProductos')) {
     productosDeCanje.forEach((producto) => {
-        containerCards.innerHTML += `
-        <article class="card">
-        <div>
-        <img src="../assets/img/banking (1) (1).png" alt="foto random">
-        </div>
-        <h2>${producto.info}</h2>
-        <button><a href="../pages/productos.html">${producto.puntos} Puntos</a></button>
-        </article>
-        `
+        renderProducto('Celular', containerCards)
+        renderProducto('Indumentaria', containerIndu)
+        renderProducto('Cocina', containerCocina)
+        renderProducto('Hogar', containerHogar)
+        renderProducto('Tecnologia', containerTecno)
+// La fn 'renderProducto' utiliza los parámetros asignados para comparar las categorías de los productos y para crear el 'innerHTML' en la locación indicada
+    function renderProducto(clase, locacion) {
+        if (producto.categoria == clase) {
+            locacion.innerHTML += `
+                <article class="card">
+                <div>
+                <img src="${producto.imgURL}" alt="${producto.categoria}">
+                </div>
+                <h2>${producto.producto}</h2>
+                <h3>${producto.puntos} Puntos</h3>
+                <button class="botonInfo">Ver más</button>
+                </article>
+                `
+                
+            }
+        }
     })
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-// seleccionarOpcion()
-
-// // ***************** FUNCIONES******************
-
-// function seleccionarOpcion() {
-//     let menu = Number(prompt('1. Consultar saldo. 2. realizar un depósito. 3. Extraer dinero. 4. Ver productos de canje. 5. Canjear puntos. 6. Cerrar sesión.'))
-//     if (menu == 1) {
-//         alert(`El saldo de tu cuenta es de $ ${saldo}`)
-//         let respuesta = confirm('Desea volver al menú anterior?')
-//         if (respuesta) {
-//             seleccionarOpcion()
-//         } else {
-//             return
-//         }
-//     } else if (menu == 2) {
-//         let deposito = Number(prompt('Ingrese la cantidad de dinero que desea depositar.'))
-//         if ((deposito <= 0) || (isNaN(deposito))) {
-//             alert('Por favor, debe ingresar un numero mayor que 0.')
-//             seleccionarOpcion()
-//         } else {
-//             alert(`Su depósito se efectuó correctamente. El saldo de su cuenta es de $ ${saldo += deposito}.`)
-//             puntos += deposito * 0.1
-//         }
-//         let respuesta = confirm('Desea volver al menú anterior?')
-//         if (respuesta) {
-//             seleccionarOpcion()
-//         } else {
-//             return
-//         }
-//     } else if (menu == 3) {
-//         let extraccion = Number(prompt('Ingresa el monto que deseas extraer'))
-//         if ((extraccion <= 0) || (isNaN(extraccion))) {
-//             alert('Por favor, ingrese un monto mayor que 0')
-//             seleccionarOpcion()
-//         } else if (extraccion > saldo) {
-//             alert('El saldo de tu cuenta es insuficinte para realizar la extracción. Debe ingresar un monto menor.')
-//             seleccionarOpcion()
-//         } else {
-//             alert(`La extración se realizó exitosamente. El saldo de tu cuenta ahora es de $ ${saldo -= extraccion}`)
-//         }
-//         let respuesta = confirm('Desea volver al menú anterior?')
-//         if (respuesta) {
-//             seleccionarOpcion()
-//         } else {
-//             return
-//         }
-//     } else if (menu == 4) {
-//         buscador = prompt('Para buscar un producto por categoría, escriba "celulares", "cocina", "hogar", "indumentaria", "tecnologia".')
-//         let productosFiltrados = buscarPorCategoria(productosDeCanje, buscador)
-//         for (items of productosFiltrados) {
-//             console.log(`***${items.info}***`)
-//         }
-//         let respuesta = confirm('Desea volver al menú anterior?')
-//         if (respuesta) {
-//             seleccionarOpcion()
-//         } else {
-//             return
-//         }
-//     } else if (menu == 5) {
-//         alert(`Llevas acumulados ${puntos} puntos`)
-//         for (productos in productosDeCanje) {
-//             if (puntos >= productosDeCanje[productos].puntos) {
-//                 console.log(`Puedes canjear tus puntos por ${productosDeCanje[productos].info}.`)
-//                 posiblesCanjes.push(productosDeCanje[productos])
-//             } else if (puntos < 100) {
-//                 alert('Tus puntos son insuficientes para realizar canjes. Por favor, ingrese más plata para incrementar sus puntos.')
-//                 seleccionarOpcion()
-//             }
-//         }
-//         for (elementos in posiblesCanjes) {
-//             let seleccion = prompt(`Para seleccionar el producto ${posiblesCanjes[elementos].info}, presiona ${elementos}. Tenés ${puntos} puntos. Presioná "enter" para pasar al siguiente producto.`)
-//             if (seleccion == elementos) {
-//                 puntos -= posiblesCanjes[elementos].puntos
-//                 alert(`Felicidades! Has canjeado tus puntos por ${posiblesCanjes[elementos].info}. Te quedan ${puntos} puntos.`)
-//                 posiblesCanjes = []
-//                 seleccionarOpcion()
-//             }
-//         }
-//         posiblesCanjes = []
-//         let respuesta = confirm('Desea volver al menú anterior?')
-//         if (respuesta) {
-//             seleccionarOpcion()
-//         } else {
-//             return
-//         }
-//     } else if (menu == 6) {
-//         alert('Gracias por confiar en nosotros, su sesión ha sido cerrada.')
-//         return
-//     } else {
-//         alert('La opción ingresada no es válida.')
-//         seleccionarOpcion()
-//     }
-// }
-
-// function buscarPorCategoria(productosDeCanje, categoria) {
-//     return productosDeCanje.filter(producto => producto.categoria === categoria)
-// }
+let botonInfo = document.querySelectorAll('.botonInfo')
+botonInfo.forEach((boton, index) => {
+    boton.addEventListener('click', ()=> {
+        Swal.fire(`${productosDeCanje[index].info}`)
+    })
+})

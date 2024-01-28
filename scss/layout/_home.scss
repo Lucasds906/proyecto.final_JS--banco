@@ -1,43 +1,59 @@
+nav {
+    a {
+        color: white;
+    }
+}
 .mainHome {
-    height: 85vh;
+    height: 100%;
     background-image: linear-gradient(to bottom, #2c2a59, #373574, #424090, #4d4bac, #5956ca, #5b57d5, #5d59e1, #5f5aec, #5751e7, #4e48e3, #453fde, #3c36d9);
     text-align: center;
     .cardContainer {
-        height: 60%;
+        height: 30rem;
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
         align-items: center;
         flex-wrap: wrap;
-
         .card {
             border: solid black;
             border-radius: 10%;
             text-align: center;
-
             overflow: hidden;
             .cardButtons {
                 padding: .5rem;
             }
-
-            ul {
-                li {
-                    font-size: .8rem;
-                }
+        }
+    }
+    .historial {
+        width: 50%;
+        background-color: black;
+        margin: auto;
+        ul {
+            li {
+                font-size: 1.5rem;
             }
         }
     }
-
     .saldoContainer {
         min-width: 20rem;
-        margin: 3rem;
+        margin: 4rem;
         text-align: center;
         display: inline-block;
         padding: .5rem;
         border: solid black;
     }
+    #botonHistorial {
+        display: inline-block;
+        padding: 2rem;
+        cursor: pointer;
+    }
 }
-
+.deposito {
+    color: white;
+}
+.extraccion {
+    color: red;
+}
 .formDeposito,
 .formExtraccion {
     display: flex;

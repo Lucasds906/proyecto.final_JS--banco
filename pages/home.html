@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body id="home">
@@ -13,21 +14,22 @@
                 <a href="#"><img src="../assets/img/bank-logo.png" alt="logo banco"></a>
                 <a href="#" class="brandName">Big Bank</a>
             </div>
+            <a href="/index.html">Cerrar sesión</a>
         </nav>
     </header>
     <main class="mainHome">
+        <button class="tipoDeMoneda">Dolar</button>
         <div class="saldoContainer">
             <h1>Saldo: $</h1>
         </div>
         <section class="cardContainer">
             <article class="card">
                 <div class="cardImg">
-                    <img src="../assets/img/banking (1) (1).png" alt="foto random">
+                    <img src="../assets/img/banking.png" alt="foto random">
                 </div>
                 <div class="cardButtons">
                     <h2>Realizar un depósito</h2>
-                    <button id="botonDeposito">Ingresar</button>
-                    <button id="botonHistorialDepo">Historial</button>
+                    <button id="botonDeposito">Depositar</button>
                 </div>
                 <form id="form-deposito" class="formDeposito">
                     <label for="deposito">Ingrese el monto a depositar</label>
@@ -38,12 +40,11 @@
             </article>
             <article class="card">
                 <div>
-                    <img src="../assets/img/banking (1) (1).png" alt="foto random">
+                    <img src="../assets/img/banking.png" alt="foto random">
                 </div>
                 <div class="cardButtons">
                     <h2>Extraer dinero</h2>
-                    <button id="botonExtraccion">Ingresar</button>
-                    <button id="botonHistorialExtra">Historial</button>
+                    <button id="botonExtraccion">Extraer</button>
                 </div>
                 <form id="form-extraccion" class="formExtraccion">
                     <label for="extraccion">Ingrese el monto a depositar</label>
@@ -54,7 +55,7 @@
             </article>
             <article class="card">
                 <div>
-                    <img src="../assets/img/banking (1) (1).png" alt="foto random">
+                    <img src="../assets/img/banking.png" alt="foto random">
                 </div>
                 <div class="cardButtons">
                     <h2>Productos para canjear</h2>
@@ -63,7 +64,7 @@
             </div>
             <article class="card">
                 <div>
-                    <img src="../assets/img/banking (1) (1).png" alt="foto random">
+                    <img src="../assets/img/banking.png" alt="foto random">
                 </div>
                 <div class="cardButtons">
                     <h2>Canjear puntos</h2>
@@ -71,8 +72,14 @@
                 </article>
             </div>
         </section>
+        <h2 id="botonHistorial">Actividad</h2>
+        <section class="historial">
+            <ul id="historialContainer"></ul>
+        </section>
     </main>
-    <script src="../js/main.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../js/productos.js"></script>
+    <script src="../js/main.js"></script>
 </body>
 </html>

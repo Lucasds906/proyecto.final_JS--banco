@@ -61,12 +61,15 @@ nav {
 .visible {
   display: none; }
 
+nav a {
+  color: white; }
+
 .mainHome {
-  height: 85vh;
+  height: 100%;
   background-image: linear-gradient(to bottom, #2c2a59, #373574, #424090, #4d4bac, #5956ca, #5b57d5, #5d59e1, #5f5aec, #5751e7, #4e48e3, #453fde, #3c36d9);
   text-align: center; }
   .mainHome .cardContainer {
-    height: 60%;
+    height: 30rem;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -79,15 +82,29 @@ nav {
       overflow: hidden; }
       .mainHome .cardContainer .card .cardButtons {
         padding: .5rem; }
-      .mainHome .cardContainer .card ul li {
-        font-size: .8rem; }
+  .mainHome .historial {
+    width: 50%;
+    background-color: black;
+    margin: auto; }
+    .mainHome .historial ul li {
+      font-size: 1.5rem; }
   .mainHome .saldoContainer {
     min-width: 20rem;
-    margin: 3rem;
+    margin: 4rem;
     text-align: center;
     display: inline-block;
     padding: .5rem;
     border: solid black; }
+  .mainHome #botonHistorial {
+    display: inline-block;
+    padding: 2rem;
+    cursor: pointer; }
+
+.deposito {
+  color: white; }
+
+.extraccion {
+  color: red; }
 
 .formDeposito,
 .formExtraccion {
@@ -106,26 +123,27 @@ nav {
 .visible {
   display: none; }
 
-#mainProductos {
-  height: 100%;
-  background-image: linear-gradient(to bottom, #2c2a59, #373574, #424090, #4d4bac, #5956ca, #5b57d5, #5d59e1, #5f5aec, #5751e7, #4e48e3, #453fde, #3c36d9); }
+.card div img {
+  width: 20rem;
+  height: 16rem; }
 
-.productosDeCanje {
+h1 {
+  text-align: center;
+  color: black;
+  padding: 1rem; }
+
+.productosDeCanje, .indumentaria, .cocina, .hogar, .tecnologia {
   width: 62.5rem;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   gap: .5rem;
-  padding: .5rem;
+  margin: auto;
   font-size: .7rem; }
-
-.mainCanjes {
-  height: 100%;
-  background-image: linear-gradient(to bottom, #2c2a59, #373574, #424090, #4d4bac, #5956ca, #5b57d5, #5d59e1, #5f5aec, #5751e7, #4e48e3, #453fde, #3c36d9); }
 
 .misPuntos {
   text-align: center;
-  padding: 3rem; }
+  margin: 3rem; }
 
 .posiblesCanjes {
   display: flex;
@@ -133,3 +151,16 @@ nav {
   flex-wrap: wrap;
   gap: .5rem;
   font-size: .7rem; }
+  .posiblesCanjes .card div img {
+    width: 20rem;
+    height: 16rem; }
+
+.productosCanjeados {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-evenly; }
+  .productosCanjeados .card h2 {
+    text-align: center;
+    font-size: 1rem; }
