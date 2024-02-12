@@ -128,9 +128,22 @@ nav a {
 .visible {
   display: none; }
 
-.card div img {
-  width: 20rem;
-  height: 16rem; }
+.mainProductos {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+
+.card {
+  background-color: #cbbfbfbd;
+  border: 3px solid black;
+  text-align: center; }
+  .card div img {
+    width: 20rem;
+    height: 16rem; }
+  .card h2 {
+    padding: 1rem; }
 
 h1 {
   text-align: center;
@@ -138,13 +151,16 @@ h1 {
   padding: 1rem; }
 
 .productosDeCanje, .indumentaria, .cocina, .hogar, .tecnologia {
-  width: 62.5rem;
+  background-color: #cbbfbfc2;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: .5rem;
-  margin: auto;
+  gap: 1rem;
+  justify-content: center;
   font-size: .7rem; }
+
+.productosDeCanje {
+  background-color: #cbbfbfbd; }
 
 .mainCanjes {
   text-align: center; }
@@ -171,6 +187,8 @@ h1 {
   flex-wrap: wrap;
   gap: 2rem;
   justify-content: space-evenly; }
-  .productosCanjeados .card h2 {
-    text-align: center;
-    font-size: 1rem; }
+  .productosCanjeados .card {
+    border: black; }
+    .productosCanjeados .card h2 {
+      text-align: center;
+      font-size: 1rem; }
